@@ -1,6 +1,7 @@
 import 'phaser';
 
 import SimpleScene from './scenes/simple-scene';
+import BlankScene from './scenes/blank-scene';
 
 const gameConfig = {
   type: Phaser.AUTO,
@@ -10,11 +11,11 @@ const gameConfig = {
     default: 'arcade',
     arcade: {
       gravity: {
-        y: 200,
+        y: 250,
       },
     },
   },
-  scene: SimpleScene,
+  scene: [SimpleScene, BlankScene], // calls constructor for each scene listed
 };
 
 new Phaser.Game(gameConfig);
